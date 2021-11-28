@@ -44,7 +44,7 @@ initialize local etherium network
 ```
 npx hardhat node
 ```
-deploy contract to local network
+deploy contract to local network (open seperate terminal from local network) 
 ```
 npx hardhat run scripts/deploy.js --network localhost
 ```
