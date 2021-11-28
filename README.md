@@ -1,4 +1,23 @@
-# Basic Sample Hardhat Project
+#required installations 
+
+node/npm:  https://hardhat.org/tutorial/setting-up-the-environment.html
+
+```
+npm init -y
+npm install --save-dev hardhat
+npx hardhat
+```
+
+install dependencies: 
+```
+npm install --save-dev @nomiclabs/hardhat-waffle ethereum-waffle chai @nomiclabs/hardhat-ethers ethers
+```
+
+run and test: 
+```
+npx hardhat compile
+npx hardhat test
+```
 
 This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
 
