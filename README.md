@@ -35,3 +35,17 @@ npx hardhat compile
 npx hardhat test
 ```
 # web3dapp
+
+run contracts
+```
+npx hardhat run scripts/run.js
+```
+initialize local etherium network
+```
+npx hardhat node
+```
+deploy contract to local network
+```npx hardhat run scripts/deploy.js --network localhost
+```
+
+
