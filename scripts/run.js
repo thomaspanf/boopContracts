@@ -1,5 +1,3 @@
-const { hexStripZeros } = require("@ethersproject/bytes")
-
 const main = async () => {
     const [owner, randomPerson] = await hre.ethers.getSigners(); 
     const boopContractFactory = await hre.ethers.getContractFactory("BoopPortal"); 

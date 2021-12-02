@@ -7,11 +7,10 @@ import "hardhat/console.sol";
 contract BoopPortal {
     uint256 totalBoops;
 
-    mapping(address =>uint) public userID; 
     mapping(address =>uint) public boopCount; 
 
     constructor(){
-        console.log("Yo yo, I am a contract and I am smart"); 
+        console.log("I am a contract and I am smart"); 
     }
 
     function boop() public {
