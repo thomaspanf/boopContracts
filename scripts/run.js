@@ -7,18 +7,20 @@ const main = async () => {
     console.log("Contract deployed to:", boopContract.address); 
     console.log("Contract deployed by:", owner.address); 
 
-    let boopCount;
-    boopCount = await boopContract.getTotalBoops();
+    let boopCount = await boopContract.getTotalBoops();
+    console.log(boopCount.toNumber()); 
 
-    let boopTxn = await boopContract.boop();
-    await boopTxn.wait();     
+    //send some messages
+    let boopTxn = await boopContract.boop("hello! test message!");
+    await boopTxn.wait();     //wait for tx to be mined 
 
-    boopCount = await boopContract.getTotalBoops(); 
 
-    boopTxn = await boopContract.connect(randomPerson).boop();
-    await boopTxn.wait(); 
+    const [_, user] = await hre.ethers.getSigners(); 
+    boopTxn = await boopContract.connect(user).boop("Another test message!");
+    await boopTxn.wait();  //wait for tx to be mined 
 
-    boopCount = await boopContract.getTotalBoops(); 
+    let allBoops = await boopContract.getTotalBoops(); 
+    console.log(allBoops); 
 };
 
 const runMain = async () => {
