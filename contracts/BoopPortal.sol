@@ -8,6 +8,7 @@ contract BoopPortal {
     uint256 totalBoops;
 
     event NewBoop(address indexed from, uint256 timestamp, string message);
+
     struct Boop {
         address booper;
         string message;
@@ -26,6 +27,11 @@ contract BoopPortal {
         totalBoops += 1; 
         console.log("%s has booped with message %s!", msg.sender, _message); 
         boops.push(Boop(msg.sender, _message, block.timestamp)); 
+        emit NewBoop(msg.sender, block.timestamp, _message); 
+    }
+
+    function getAllBoops() public view returns (Boop[] memory) {
+        return boops;
     }
 
     function getTotalBoops() public view returns (uint256) {
