@@ -1,1 +1,1 @@
-Contracts and Hardhat testing enviornment for boop portal 
+Contracts and Hardhat testing environment for boop portal 
